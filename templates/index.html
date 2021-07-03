@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<center>{% with messages = get_flashed_messages() %}
+    {% if messages %}
+<ul>
+        {% for message in messages %}
+            <li style="list-style: none;">{{ message }}</li>
+        {% endfor%}
+</ul>
+    {% endif %}
+{% endwith%}
+
+{{ user_pic|safe }}</center>
+
+<form action="" method="POST" enctype="multipart/form-data" style="text-align: center; margin-top: 30px;">
+{{ form.csrf_token }}
+    {{ form.image }}
+    {{ form.submit }}
+</form>
+</body>
+</html>
