@@ -1,0 +1,37 @@
+
+.container{
+margin: 0 auto;
+text-align: center;
+}
+
+.alert{
+text-align: center;
+margin: 20px auto;
+}
+
+.alert li{
+width: 200px;
+list-style-type: none;
+text-align: center;
+}
+
+
+.alert p{
+text-align: center;
+}
+
+.alert.success {
+  background-color: lightgreen;
+}
+
+.alert.info {
+  background-color: lightblue;
+}
+
+.alert.warning {
+  background-color: pink;
+}
+
+.alert.error {
+  background-color: red;
+}
