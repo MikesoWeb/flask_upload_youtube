@@ -1,29 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-<div class="container">
-{% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-<ul class="alert">
-        {% for category, message in messages %}
-            <li class="alert {{ category }}"><p>{{ message }}</p></li>
-        {% endfor%}
-</ul>
-    {% endif %}
-{% endwith%}
+{% extends 'layout.html' %}
 
-{{ user_pic|safe }}
-
-<form action="" method="POST" enctype="multipart/form-data">
-{{ form.csrf_token }}
+{% block content %}
+<form action="{{ url_for( 'upload' ) }}" method="POST" enctype="multipart/form-data">
+    {{ form.csrf_token }}
     {{ form.image }}
     {{ form.submit }}
 </form>
-    </div>
-</body>
-</html>
+{% endblock content %}
